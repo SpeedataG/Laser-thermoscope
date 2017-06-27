@@ -32,7 +32,7 @@ public class RedActivity extends Activity implements View.OnClickListener {
 
         try {
             serialPort = new SerialPort();
-            serialPort.OpenSerial("/dev/ttyMT3", 9600);
+            serialPort.OpenSerial("/dev/ttyMT2", 9600);
             fd = serialPort.getFd();
             control = new DeviceControl("/sys/class/misc/mtgpio/pin");
         } catch (IOException e) {
