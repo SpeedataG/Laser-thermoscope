@@ -157,6 +157,13 @@ public class SerialPort {
         return true;
     }
 
+    /**
+     * 清除缓存
+     */
+    public void ClearSerialPort(){
+        clearportbuf(fdx);
+    }
+
     // JNI
     private native int openport(String port, int brd, int bit, int stop, int crc);
 

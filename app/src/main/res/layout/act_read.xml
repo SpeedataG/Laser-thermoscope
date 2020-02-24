@@ -36,12 +36,13 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="目标温度"
-            android:textColor="@color/white"
-            android:textSize="30sp"
             android:layout_below="@+id/tv_mubiao"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="12dp" />
+            android:layout_marginTop="12dp"
+            android:text="体温"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:visibility="visible" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -53,10 +54,11 @@
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/imageView3"
-            android:background="@drawable/img_max_min" />
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/img_max_min"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/tv_max"
@@ -64,88 +66,96 @@
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/textView4"
             android:layout_alignBottom="@+id/textView4"
-            android:layout_marginLeft="22dp"
             android:layout_marginStart="22dp"
+            android:layout_marginLeft="22dp"
             android:layout_toEndOf="@+id/textView4"
             android:layout_toRightOf="@+id/textView4"
-            android:text="0.00℃" />
+            android:text="0.00℃"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/tv_min"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/textView6"
-            android:layout_alignBottom="@+id/textView6"
-            android:layout_alignLeft="@+id/tv_max"
             android:layout_alignStart="@+id/tv_max"
-            android:text="0.00℃" />
+            android:layout_alignLeft="@+id/tv_max"
+            android:layout_alignBottom="@+id/textView6"
+            android:text="0.00℃"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="21dp"
-            android:layout_marginLeft="48dp"
-            android:textColor="@color/black"
-            android:layout_marginStart="48dp"
-            android:text="MAX值："
             android:layout_above="@+id/imageView4"
+            android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginBottom="21dp"
+            android:text="MAX值："
+            android:textColor="@color/black"
+            android:visibility="invisible" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/img_max_min"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentTop="true"
+            android:background="@drawable/img_max_min"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView4"
+            android:layout_alignLeft="@+id/textView4"
+            android:layout_alignBottom="@+id/imageView4"
+            android:layout_marginBottom="20dp"
             android:text="MIN值："
             android:textColor="@color/black"
-            android:layout_alignBottom="@+id/imageView4"
-            android:layout_alignLeft="@+id/textView4"
-            android:layout_alignStart="@+id/textView4"
-            android:layout_marginBottom="20dp" />
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="环境温度："
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="@color/black"
-            android:layout_alignBottom="@+id/imageView"
-            android:layout_alignLeft="@+id/textView6"
             android:layout_alignStart="@+id/textView6"
-            android:layout_marginBottom="17dp" />
+            android:layout_alignLeft="@+id/textView6"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_marginBottom="17dp"
+            android:text="环境温度："
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/tv_huanjing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_toEndOf="@+id/textView"
+            android:layout_toRightOf="@+id/textView"
             android:text="0.00℃"
             android:textColor="@color/black"
-            android:textStyle="bold"
             android:textSize="18sp"
-            android:layout_toRightOf="@+id/textView"
-            android:layout_toEndOf="@+id/textView"
-            android:layout_alignBottom="@+id/textView" />
+            android:textStyle="bold"
+            android:visibility="invisible" />
 
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/img_max_min"
-            android:id="@+id/imageView"
             android:layout_below="@+id/imageView4"
+            android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:background="@drawable/img_max_min"
+            android:visibility="invisible" />
     </RelativeLayout>
 
     <LinearLayout
