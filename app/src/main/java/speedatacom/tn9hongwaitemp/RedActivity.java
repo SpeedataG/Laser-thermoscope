@@ -7,9 +7,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-import com.speedata.temperture.TN90Model;
+import com.speedata.temperture.ITempertureInterface;
 import com.speedata.temperture.Temperture;
 import com.speedata.temperture.TempertureCallBack;
+import com.speedata.temperture.TempertureManager;
 
 import util.PlaySoundPool;
 
@@ -20,7 +21,7 @@ public class RedActivity extends Activity implements View.OnClickListener {
 
 
     private PlaySoundPool playSoundPool;
-    private TN90Model tn90Model;
+    private ITempertureInterface tempertureManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +29,9 @@ public class RedActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.act_read);
         playSoundPool = PlaySoundPool.getPlaySoundPool(this);
         initUI();
-        tn90Model = new TN90Model();
-        tn90Model.openDev();
-        tn90Model.setCallBack(new TempertureCallBack() {
+        tempertureManager = TempertureManager.getIntance();
+        tempertureManager.openDev();
+        tempertureManager.setCallBack(new TempertureCallBack() {
             @Override
             public void receTempData(Temperture temperture) {
                 String msg = "";
@@ -66,7 +67,7 @@ public class RedActivity extends Activity implements View.OnClickListener {
                 if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
                     Log.v("LogTemp", "Start Thread");
                     btnStart.setEnabled(false);
-                    tn90Model.startMeasurement(true);
+                    tempertureManager.startMeasurement(true);
                 }
                 return false;
             }
@@ -80,7 +81,7 @@ public class RedActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == btnStart) {
-            tn90Model.startMeasurement(true);
+            tempertureManager.startMeasurement(true);
         }
     }
 
@@ -91,8 +92,8 @@ public class RedActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onDestroy() {
-//        tn90Model.stopMeasurement();
-        tn90Model.closeDev();
+//        tempertureManager.stopMeasurement();
+        tempertureManager.closeDev();
         super.onDestroy();
     }
 
