@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TN9hongwaiTemp.iml" filepath="$PROJECT_DIR$/TN9hongwaiTemp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Laser-thermoscope-master.iml" filepath="$PROJECT_DIR$/Laser-thermoscope-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/temperture/temperture.iml" filepath="$PROJECT_DIR$/temperture/temperture.iml" />
     </modules>
   </component>
 </project>
